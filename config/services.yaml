@@ -2,3 +2,10 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
+
+    SmartAssert\WorkerMessageFailedEventBundle\WorkerMessageFailedEventHandler:
+        public: true
+        tags:
+            - { name: kernel.event_listener, event: Symfony\Component\Messenger\Event\WorkerMessageFailedEvent }
+        arguments:
+            $handlers: !tagged_iterator !php/const:SmartAssert\WorkerMessageFailedEventBundle\WorkerMessageFailedEventBundle::HANDLER_TAG
