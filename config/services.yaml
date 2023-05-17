@@ -8,4 +8,8 @@ services:
         tags:
             - { name: kernel.event_listener, event: Symfony\Component\Messenger\Event\WorkerMessageFailedEvent }
         arguments:
-            $handlers: !tagged_iterator !php/const:SmartAssert\WorkerMessageFailedEventBundle\WorkerMessageFailedEventBundle::HANDLER_TAG
+            $handlers: !tagged_iterator !php/const:SmartAssert\WorkerMessageFailedEventBundle\WorkerMessageFailedEventBundle::EXCEPTION_HANDLER_TAG
+
+    SmartAssert\WorkerMessageFailedEventBundle\HandlerFailedExceptionHandler:
+        arguments:
+            $handlers: !tagged_iterator !php/const:SmartAssert\WorkerMessageFailedEventBundle\WorkerMessageFailedEventBundle::EXCEPTION_COLLECTION_HANDLER_TAG
