@@ -1,0 +1,2 @@
+# WorkerMessageFailedEventBundle
+Symfony bundle for handling exceptions encapsulated within a WorkerMessageFailedEvent
