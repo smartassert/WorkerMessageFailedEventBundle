@@ -18,5 +18,7 @@ class WorkerMessageFailedEventBundle extends AbstractBundle
         parent::loadExtension($config, $container, $builder);
 
         $container->import('../config/services.yaml');
+        $builder->registerForAutoconfiguration(ExceptionHandlerInterface::class)
+            ->addTag('smartassert.worker_message_failed_event_bundle.message_failure_handler.exception_handler');
     }
 }
