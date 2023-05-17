@@ -10,6 +10,8 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class WorkerMessageFailedEventBundle extends AbstractBundle
 {
+    public const HANDLER_TAG = 'smartassert.worker_message_failed_event_bundle.message_failure_handler.exception_handler';
+
     /**
      * @param array<mixed> $config
      */
@@ -19,6 +21,7 @@ class WorkerMessageFailedEventBundle extends AbstractBundle
 
         $container->import('../config/services.yaml');
         $builder->registerForAutoconfiguration(ExceptionHandlerInterface::class)
-            ->addTag('smartassert.worker_message_failed_event_bundle.message_failure_handler.exception_handler');
+            ->addTag(self::HANDLER_TAG)
+        ;
     }
 }
