@@ -9,7 +9,7 @@ use Symfony\Component\Messenger\Exception\HandlerFailedException;
 class HandlerFailedExceptionHandler implements ExceptionHandlerInterface
 {
     /**
-     * @param iterable<ExceptionCollectionHandlerInterface> $handlers
+     * @param iterable<ExceptionHandlerInterface> $handlers
      */
     public function __construct(
         private readonly iterable $handlers,
@@ -22,8 +22,10 @@ class HandlerFailedExceptionHandler implements ExceptionHandlerInterface
             return;
         }
 
-        foreach ($this->handlers as $handler) {
-            $handler->handle($throwable->getNestedExceptions());
+        foreach ($throwable->getNestedExceptions() as $nestedException) {
+            foreach ($this->handlers as $handler) {
+                $handler->handle($nestedException);
+            }
         }
     }
 }
