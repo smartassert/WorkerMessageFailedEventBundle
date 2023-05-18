@@ -12,4 +12,4 @@ services:
 
     SmartAssert\WorkerMessageFailedEventBundle\HandlerFailedExceptionHandler:
         arguments:
-            $handlers: !tagged_iterator !php/const:SmartAssert\WorkerMessageFailedEventBundle\WorkerMessageFailedEventBundle::EXCEPTION_COLLECTION_HANDLER_TAG
+            $handlers: !tagged_iterator !php/const:SmartAssert\WorkerMessageFailedEventBundle\WorkerMessageFailedEventBundle::EXCEPTION_HANDLER_TAG
