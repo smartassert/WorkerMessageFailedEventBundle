@@ -12,7 +12,7 @@ class WorkerMessageFailedEventHandler
      * @param iterable<ExceptionHandlerInterface> $handlers
      */
     public function __construct(
-        private readonly iterable $handlers,
+        public readonly iterable $handlers,
     ) {
     }
 
