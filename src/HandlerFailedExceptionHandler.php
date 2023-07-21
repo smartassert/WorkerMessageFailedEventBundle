@@ -6,13 +6,13 @@ namespace SmartAssert\WorkerMessageFailedEventBundle;
 
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
-class HandlerFailedExceptionHandler implements ExceptionHandlerInterface
+readonly class HandlerFailedExceptionHandler implements ExceptionHandlerInterface
 {
     /**
      * @param iterable<ExceptionHandlerInterface> $handlers
      */
     public function __construct(
-        public readonly iterable $handlers,
+        public iterable $handlers,
     ) {
     }
 
