@@ -1,5 +1,5 @@
 /vendor/
 /var/
-.phpunit.result.cache
+/.phpunit.result
 .php-cs-fixer.cache
 composer.lock

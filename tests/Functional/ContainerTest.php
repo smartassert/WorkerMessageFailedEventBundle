@@ -35,7 +35,7 @@ class ContainerTest extends TestCase
     /**
      * @return array<mixed>
      */
-    public function serviceExistsInContainerDataProvider(): array
+    public static function serviceExistsInContainerDataProvider(): array
     {
         return [
             WorkerMessageFailedEventHandler::class => [
