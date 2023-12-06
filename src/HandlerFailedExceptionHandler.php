@@ -23,7 +23,7 @@ readonly class HandlerFailedExceptionHandler implements ExceptionHandlerInterfac
             return;
         }
 
-        foreach ($throwable->getNestedExceptions() as $nestedException) {
+        foreach ($throwable->getWrappedExceptions() as $nestedException) {
             foreach ($this->handlers as $handler) {
                 $handler->handle($envelope, $nestedException);
             }
