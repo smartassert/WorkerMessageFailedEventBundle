@@ -33,7 +33,7 @@
         "test": "XDEBUG_MODE=off ./vendor/bin/phpunit --colors=always tests"
     },
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "symfony/config": "^6.4 || ^7.0",
         "symfony/dependency-injection": "^6.4 || ^7.0",
         "symfony/messenger": "^6.4 || ^7.0",
