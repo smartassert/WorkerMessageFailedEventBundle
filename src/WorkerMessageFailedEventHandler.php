@@ -13,8 +13,7 @@ readonly class WorkerMessageFailedEventHandler
      */
     public function __construct(
         public iterable $handlers,
-    ) {
-    }
+    ) {}
 
     public function __invoke(WorkerMessageFailedEvent $event): void
     {

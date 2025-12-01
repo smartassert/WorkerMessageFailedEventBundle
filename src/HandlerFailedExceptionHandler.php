@@ -14,8 +14,7 @@ readonly class HandlerFailedExceptionHandler implements ExceptionHandlerInterfac
      */
     public function __construct(
         public iterable $handlers,
-    ) {
-    }
+    ) {}
 
     public function handle(Envelope $envelope, \Throwable $throwable): void
     {
