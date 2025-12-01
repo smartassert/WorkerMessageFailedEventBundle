@@ -50,9 +50,6 @@
         "symfony/http-kernel": "^7 || ^8"
     },
     "config": {
-        "audit": {
-            "block-insecure": false
-        },
         "sort-packages": true,
         "allow-plugins": {
             "phpstan/extension-installer": true
