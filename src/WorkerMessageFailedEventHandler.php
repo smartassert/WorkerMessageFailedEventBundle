@@ -22,7 +22,7 @@ readonly class WorkerMessageFailedEventHandler
         }
 
         foreach ($this->handlers as $handler) {
-            $handler->handle($event->getEnvelope(), $event->getThrowable());
+            $handler->handle($event->getEnvelope(), $event->getThrowable(), $event);
         }
     }
 }
